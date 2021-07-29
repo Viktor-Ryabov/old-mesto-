@@ -1,0 +1,29 @@
+.edit-form__close-icon {
+    margin: 0;
+    padding: 0;
+    width: 32px;
+    min-height: 32px;
+    position: relative;
+    top: -341px;
+    right: -438px;
+    cursor: pointer;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url(../../../images/Close-Icon.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.edit-form__close-icon:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 540px){
+    .edit-form__close-icon {
+        top: -366px;
+        right: -260px;
+        width: 22px;
+        min-height: 22px;
+    }
+}

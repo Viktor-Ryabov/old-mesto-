@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Проект Mesto</title>
+  </head>
+
+  <body class="page">
+    <header class="header">
+      <img
+        class="header__logo"
+        src="./images/logo__Vector.svg"
+        alt="логотип-проекта"
+      />
+    </header>
+
+    <main class="content">
+      <section class="profile">
+        <img class="profile__avatar" src="./images/me4.jpg" alt="аватар" />
+
+        <div class="profile__profile-info">
+          <h1 class="profile__title">Виктор Рябов</h1>
+          <button
+            aria-label="Изменение данных профиля"
+            type="button"
+            class="profile__edit-button"
+          >
+            <img
+              class="profile__edit-button-vector"
+              src="./images/edit__Vector.svg"
+              alt="кнопка"
+            />
+          </button>
+          <p class="profile__subtitle">Неустанный путешественник</p>
+        </div>
+
+        <button
+          aria-label="Добавление карточки"
+          type="button"
+          class="profile__add-button"
+        >
+          <img
+            class="profile__add-button-vector"
+            src="./images/add__Vector.svg"
+            alt="кнопка-2"
+          />
+        </button>
+      </section>
+
+      <section aria-label="Карточки путешествий с описанием" class="places">
+        <article class="card">
+          <div class="card__rectangle">
+            <img
+              class="card__foto"
+              src="./images/img/ai-petri.jpg"
+              alt="Ай Петри"
+            />
+            <div class="card__name-like">
+              <h2 class="card__title">Ай Петри</h2>
+              <button
+                aria-label="Лайк"
+                type="button"
+                class="card__button-like"
+              ></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__rectangle">
+            <img class="card__foto" src="./images/img/arhiz.jpg" alt="Архыз" />
+            <div class="card__name-like">
+              <h2 class="card__title">Архыз</h2>
+              <button
+                aria-label="Лайк"
+                type="button"
+                class="card__button-like"
+              ></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__rectangle">
+            <img
+              class="card__foto"
+              src="./images/img/dombai.jpg"
+              alt="Домбай"
+            />
+            <div class="card__name-like">
+              <h2 class="card__title">Домбай</h2>
+              <button
+                aria-label="Лайк"
+                type="button"
+                class="card__button-like"
+              ></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__rectangle">
+            <img
+              class="card__foto"
+              src="./images/img/karelia.jpg"
+              alt="Карелия"
+            />
+            <div class="card__name-like">
+              <h2 class="card__title">Карелия</h2>
+              <button
+                aria-label="Лайк"
+                type="button"
+                class="card__button-like"
+              ></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__rectangle">
+            <img
+              class="card__foto"
+              src="./images/img/pereval-golubeva.jpg"
+              alt="Перевал Голубева"
+            />
+            <div class="card__name-like">
+              <h2 class="card__title">Перевал Голубева</h2>
+              <button
+                aria-label="Лайк"
+                type="button"
+                class="card__button-like"
+              ></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__rectangle">
+            <img
+              class="card__foto"
+              src="./images/img/smencevo.jpg"
+              alt="Сменцево"
+            />
+            <div class="card__name-like">
+              <h2 class="card__title">Сменцево</h2>
+              <button
+                aria-label="Лайк"
+                type="button"
+                class="card__button-like"
+              ></button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__copyright">&copy; Mesto Russia</p>
+    </footer>
+
+    <div class="edit-form">
+      <form
+        autocomplete="on"
+        action="#"
+        class="edit-form__form"
+        name="edit-place"
+        method="POST"
+      >
+        <h3 class="edit-form__title">Редактировать профиль</h3>
+        <input
+          value="Рябов Виктор Алекандрович"
+          type="text"
+          class="edit-form__field"
+        />
+        <input
+          value="Неустанный путешественник"
+          type="text"
+          class="edit-form__field"
+        />
+        <button
+          aria-label="Сохранить"
+          value="Сохранить"
+          type="submit"
+          class="edit-form__submit-button"
+        >
+          Сохранить
+        </button>
+        <button
+          aria-label="Закрыть"
+          type="button"
+          class="edit-form__close-icon"
+        ></button>
+      </form>
+    </div>
+  </body>
+</html>

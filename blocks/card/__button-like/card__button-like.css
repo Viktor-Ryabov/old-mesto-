@@ -1,0 +1,22 @@
+.card__button-like{
+    margin: 0;
+    padding: 0;
+    width: 22px;
+    height: 19px;
+    border: none;
+    align-self: center;
+    background-image: url(../../../images/card__vector.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.card__button-like:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.card__button-like:active {
+    cursor: pointer;
+    background-image: url(../../../images/elements__vectro_active.svg);
+}

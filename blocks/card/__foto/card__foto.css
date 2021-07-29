@@ -1,0 +1,14 @@
+.card__foto {
+    margin: 0;
+    padding: 0;
+    width: 282px;
+    height: 282px;
+    top: 0;
+}
+
+
+/*.elements__foto:hover~.elements__element{
+    transform: scale(130%);
+    filter: contrast(130%) brightness(105%);
+    transition: 3s;
+}
