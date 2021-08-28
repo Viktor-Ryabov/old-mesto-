@@ -22,8 +22,9 @@
         <img class="profile__avatar" src="./images/me4.jpg" alt="аватар" />
 
         <div class="profile__profile-info">
-          <h1 class="profile__title">Виктор Рябов</h1>
+          <h1 class="profile__title" id="nameProfile">Виктор Рябов</h1>
           <button
+            id="profileEdit"
             aria-label="Изменение данных профиля"
             type="button"
             class="profile__edit-button"
@@ -34,7 +35,7 @@
               alt="кнопка"
             />
           </button>
-          <p class="profile__subtitle">Неустанный путешественник</p>
+          <p class="profile__subtitle" id="descriptionProfile">Неустанный путешественник</p>
         </div>
 
         <button
@@ -161,26 +162,32 @@
       <p class="footer__copyright">&copy; Mesto Russia</p>
     </footer>
 
-    <div class="edit-form">
+    <div class="edit-form" id="editForm">
       <form
         autocomplete="on"
         action="#"
         class="edit-form__form"
-        name="edit-place"
+        name="editForm"
         method="POST"
+
       >
         <h3 class="edit-form__title">Редактировать профиль</h3>
         <input
+          name='nameEditForm'
+          id="nameEditForm"
           value="Рябов Виктор Алекандрович"
           type="text"
           class="edit-form__field"
         />
         <input
+          id="descriptionEditForm"
+          name='descriptionEditForm'
           value="Неустанный путешественник"
           type="text"
           class="edit-form__field"
         />
         <button
+          id="saveData"
           aria-label="Сохранить"
           value="Сохранить"
           type="submit"
@@ -189,11 +196,35 @@
           Сохранить
         </button>
         <button
+          id='popapClose'
           aria-label="Закрыть"
           type="button"
           class="edit-form__close-icon"
         ></button>
       </form>
     </div>
+
+    <!--<template>
+      <article class="card">
+        <div class="card__rectangle">
+          <img
+            class="card__foto"
+            src="#"
+            alt=""
+          />
+          <div class="card__name-like">
+            <h2 class="card__title"></h2>
+            <button
+              aria-label="Лайк"
+              type="button"
+              class="card__button-like"
+            ></button>
+          </div>
+        </div>
+      </article>
+    </template>-->
+
+    <script src="./pages/index.js"></script>
+
   </body>
 </html>

@@ -20,3 +20,8 @@
     cursor: pointer;
     background-image: url(../../../images/elements__vectro_active.svg);
 }
+
+.card__button-like_active {
+    cursor: pointer;
+    background-image: url(../../../images/elements__vectro_active.svg);
+}
