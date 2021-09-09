@@ -1,4 +1,4 @@
-.edit-form {
+.image-popup {
     margin: 0;
     padding: 0;
     position: fixed;
@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: flex-start;
     justify-content: center;
-    align-items: center;
+
     visibility: hidden;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 10;

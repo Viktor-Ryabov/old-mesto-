@@ -1,0 +1,10 @@
+.image-popup__main-block {
+    margin: 0;
+    padding: 0;
+    height: 740px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

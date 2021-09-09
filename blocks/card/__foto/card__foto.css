@@ -5,6 +5,10 @@
     height: 282px;
     top: 0;
 }
+.card__foto:hover{
+    cursor: pointer;
+}
+
 
 
 /*.elements__foto:hover~.elements__element{

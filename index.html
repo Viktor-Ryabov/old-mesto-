@@ -24,7 +24,7 @@
         <div class="profile__profile-info">
           <h1 class="profile__title" id="nameProfile">Виктор Рябов</h1>
           <button
-            id="profileEdit"
+            id="popupOpenProfile"
             aria-label="Изменение данных профиля"
             type="button"
             class="profile__edit-button"
@@ -39,6 +39,7 @@
         </div>
 
         <button
+          id = "buttonAddCard"
           aria-label="Добавление карточки"
           type="button"
           class="profile__add-button"
@@ -54,6 +55,11 @@
       <section aria-label="Карточки путешествий с описанием" class="places">
         <article class="card">
           <div class="card__rectangle">
+            <button
+            aria-label="кнопка удаления карточки"
+            type="button"
+            class="card__delete-botton"
+            ></button>
             <img
               class="card__foto"
               src="./images/img/ai-petri.jpg"
@@ -72,6 +78,11 @@
 
         <article class="card">
           <div class="card__rectangle">
+            <button
+            aria-label="кнопка удаления карточки"
+            type="button"
+            class="card__delete-botton"
+            ></button>
             <img class="card__foto" src="./images/img/arhiz.jpg" alt="Архыз" />
             <div class="card__name-like">
               <h2 class="card__title">Архыз</h2>
@@ -86,6 +97,11 @@
 
         <article class="card">
           <div class="card__rectangle">
+            <button
+            aria-label="кнопка удаления карточки"
+            type="button"
+            class="card__delete-botton"
+            ></button>
             <img
               class="card__foto"
               src="./images/img/dombai.jpg"
@@ -104,6 +120,11 @@
 
         <article class="card">
           <div class="card__rectangle">
+            <button
+            aria-label="кнопка удаления карточки"
+            type="button"
+            class="card__delete-botton"
+            ></button>
             <img
               class="card__foto"
               src="./images/img/karelia.jpg"
@@ -122,6 +143,11 @@
 
         <article class="card">
           <div class="card__rectangle">
+            <button
+            aria-label="кнопка удаления карточки"
+            type="button"
+            class="card__delete-botton"
+            ></button>
             <img
               class="card__foto"
               src="./images/img/pereval-golubeva.jpg"
@@ -140,6 +166,11 @@
 
         <article class="card">
           <div class="card__rectangle">
+            <button
+            aria-label="кнопка удаления карточки"
+            type="button"
+            class="card__delete-botton"
+            ></button>
             <img
               class="card__foto"
               src="./images/img/smencevo.jpg"
@@ -161,21 +192,20 @@
     <footer class="footer">
       <p class="footer__copyright">&copy; Mesto Russia</p>
     </footer>
-
-    <div class="edit-form" id="editForm">
+    
+    <div class="edit-form" id="editFormProfile">
       <form
         autocomplete="on"
         action="#"
         class="edit-form__form"
         name="editForm"
         method="POST"
-
       >
         <h3 class="edit-form__title">Редактировать профиль</h3>
         <input
           name='nameEditForm'
           id="nameEditForm"
-          value="Рябов Виктор Алекандрович"
+          value="Рябов Виктор"
           type="text"
           class="edit-form__field"
         />
@@ -196,12 +226,68 @@
           Сохранить
         </button>
         <button
-          id='popapClose'
+          id='popupCloseProfile'
           aria-label="Закрыть"
           type="button"
           class="edit-form__close-icon"
         ></button>
       </form>
+    </div>
+
+<!--форма для дбавления карточек-->
+    <div class="edit-form" id="editFormMesto">
+      <form
+        autocomplete="on"
+        action="#"
+        class="edit-form__form"
+        name="editForm"
+        method="POST"
+      >
+        <h3 class="edit-form__title">Новое место</h3>
+        <input
+          name='mestoName'
+          id="mestoName"
+          value="Самое невероятное место, которое только бывает"
+          type="text"
+          class="edit-form__field"
+        />
+        <input
+          id="linkFotoMesto"
+          name='linkFotoMesto'
+          value="https://mesto/example.jpg"
+          type="text"
+          class="edit-form__field"
+        />
+        <button
+          id="saveData"
+          aria-label="Сохранить"
+          value="Сохранить"
+          type="submit"
+          class="edit-form__submit-button"
+        >
+          Сохранить
+        </button>
+        <button
+          id='popapCloseCard'
+          aria-label="Закрыть"
+          type="button"
+          class="edit-form__close-icon"
+        ></button>
+      </form>
+    </div>
+<!--попап с фото-->
+    <div 
+    class="image-popup" 
+    id="image-popup"
+    >
+      <button
+        id='popapCloseFoto'
+        aria-label="Закрыть"
+        type="button"
+        class="image-popup__close-icon"
+      ></button>
+      <img class="image-popup__foto">
+      <h4 class="image-popup__discription">13456789</h4>
     </div>
 
     <!--<template>
@@ -228,3 +314,5 @@
 
   </body>
 </html>
+
+
