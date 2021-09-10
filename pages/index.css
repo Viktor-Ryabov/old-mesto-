@@ -34,3 +34,6 @@
 @import url(../blocks/image-popup/__foto/image-popup__foto.css);
 @import url(../blocks/image-popup/__discription/image-popup__discription.css);
 @import url(../blocks/image-popup/__close-icon/image-popup__close-icon.css);
+@import url(../blocks/effects/__opacity/effects__opacity.css);
+@import url(../blocks/effects/__open-close/effects__open-close.css);
+@import url(../blocks/effects/__opacity/_close/effects__opacity_close.css);
