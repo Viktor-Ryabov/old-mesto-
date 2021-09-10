@@ -18,8 +18,8 @@ const cardPlacesSection = document.querySelector('.places');
 
 //ПОПАП ФОТО
 const imagePopup = document.querySelector('#image-popup');
-const imagePopupOpenButton = document.querySelectorAll('.card__foto');
-const imagePopupCloseButton = document.querySelector('#imagePopupCloseButton');
+const imagePopupOpenButton = document.querySelector('.card__foto');
+const imagePopupCloseButton = document.querySelector('#popapCloseFoto');
 const imagePopupFotoBig = document.querySelector('.image-popup__foto');
 const imagePopupFotoText = document.querySelector('.image-popup__discription');
 
@@ -50,34 +50,32 @@ const initialCards = [
     }
     ];
 
+
+
+
+//КЛОНИРОВАНИЕ КАРТОЧЕК
 function addCard(name, link) {
     if ('content' in document.createElement('template')) {
         const newCardTemplate = document.querySelector('#newCardTemplate').content;
         let clone = newCardTemplate.cloneNode(true);
-        console.log(clone.querySelector('.card__title'));
         clone.querySelector('.card__title').innerHTML = name;
         clone.querySelector('img').src = link;
         clone.querySelector('img').alt = name;
-        cardPlacesSection.insertBefore(clone, cardPlacesSection.firstChild);
+        like(clone.querySelector('.card__button-like'));
+        fotoOpen(clone.querySelector('.card__foto'));
+        //popupCloseFunction();
+
+        cardPlacesSection.insertBefore(clone, cardPlacesSection.firstChild);        
     };
 }
-console.log(initialCards[1].name);
-
-function cards(massive) {
+//ДОБАВЛЕНИЕ КАРТОЧЕК НА СТРАНИЦУ
+function cardsAddToPage(massive) {
     for(let i = 0; i < massive.length; i++) {
         console.log(massive[i].name, massive[i].link);
         addCard(massive[i].name, massive[i].link);  
     }
 }
-cards(initialCards);
-
-
-// initialCards.forEach( function (item) {
-//     console.log(initialCards[item].name)
-// });
-
-//initialCards.forEach(item => addCard(initialCards["name"], initialCards["link"]));
-
+cardsAddToPage(initialCards);
 
 //Открыть попап
 function popupOpenFunction(popupWindow, button) {
@@ -92,29 +90,24 @@ popupOpenFunction(editFormMesto, buttonAddCard);
 //Закрыть попап
 function popupCloseFunction(popupWindow, button) {
     button.addEventListener('click', function(){
-        popupWindow.classList.add("effects__opacity_close");
+        // popupWindow.classList.add("effects__opacity_close");
         popupWindow.classList.remove("effects__open-close");
-        popupWindow.classList.remove("effects__opacity_close"); 
+        // popupWindow.classList.remove("effects__opacity_close"); 
     }); 
 }
 popupCloseFunction(editFormProfile, popupCloseProfileButton);
 popupCloseFunction(editFormMesto, popapCloseCard);
+popupCloseFunction(imagePopup, imagePopupCloseButton);
 
-//*Функция ЛАЙК
-// function like(buttonLike) {
-//     buttonLike.addEventListener('click', function() {
-//         buttonLike.classList.toggle('card__button-like_active');
-//         });
-// }
-// like(cardButtonLike);
-
-//Функция удаления карточки
-function deleteCard() {
-    
+//Функция ЛАЙК
+function like(buttonLike) {
+    buttonLike.addEventListener('click', function() {
+        buttonLike.classList.toggle('card__button-like_active');
+        });
 }
 
 //Функция "большие фото" открыть
-fotoOpen = function(imageClick) {
+function fotoOpen(imageClick) {
     imageClick.addEventListener('click', function () {
         imagePopup.classList.add("effects__open-close");
         imagePopupFotoBig.src = imageClick.src;
@@ -122,9 +115,12 @@ fotoOpen = function(imageClick) {
     });
 }
 
-
-
-
+//цикл перебора для удаления карточек
+deletCardFunction = function(){
+    deleteCardButton.addEventListener('click', function(){
+        cardPlace[i].remove();
+    });
+}
 
 // //ЭЛЕМЕНТЫ
 
@@ -135,7 +131,7 @@ fotoOpen = function(imageClick) {
 // const editForm = document.querySelector('#editForm');
 // const nameEditForm = document.querySelector('#nameEditForm'); //сокращенная запись
 // const descriptionEditForm = document.querySelector('#descriptionEditForm');
-// const saveProfile = document.querySelector('#saveData');
+// const saveProfile = document.querySelector('#saveDataButton');
 
 // //ЭДЕМЕНТЫ ФОРМЫ ПРОФАЙЛА
 // const nameProfile = document.querySelector('#nameProfile');
@@ -212,12 +208,7 @@ fotoOpen = function(imageClick) {
 
 
 
-// //цикл перебора для удаления карточек
-// deletCardFunction = function()
-//     deleteCardButton.addEventListener('click', function(){
-//         cardPlace[i].remove();
-//     });
-// }
+
 
 
 
