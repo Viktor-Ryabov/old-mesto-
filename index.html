@@ -53,139 +53,6 @@
       </section>
 
       <section aria-label="Карточки путешествий с описанием" class="places">
-        <article class="card">
-          <div class="card__rectangle">
-            <button
-            aria-label="кнопка удаления карточки"
-            type="button"
-            class="card__delete-botton"
-            ></button>
-            <img
-              class="card__foto"
-              src="./images/img/ai-petri.jpg"
-              alt="Ай Петри"
-            />
-            <div class="card__name-like">
-              <h2 class="card__title">Ай Петри</h2>
-              <button
-                aria-label="Лайк"
-                type="button"
-                class="card__button-like"
-              ></button>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card__rectangle">
-            <button
-            aria-label="кнопка удаления карточки"
-            type="button"
-            class="card__delete-botton"
-            ></button>
-            <img class="card__foto" src="./images/img/arhiz.jpg" alt="Архыз" />
-            <div class="card__name-like">
-              <h2 class="card__title">Архыз</h2>
-              <button
-                aria-label="Лайк"
-                type="button"
-                class="card__button-like"
-              ></button>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card__rectangle">
-            <button
-            aria-label="кнопка удаления карточки"
-            type="button"
-            class="card__delete-botton"
-            ></button>
-            <img
-              class="card__foto"
-              src="./images/img/dombai.jpg"
-              alt="Домбай"
-            />
-            <div class="card__name-like">
-              <h2 class="card__title">Домбай</h2>
-              <button
-                aria-label="Лайк"
-                type="button"
-                class="card__button-like"
-              ></button>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card__rectangle">
-            <button
-            aria-label="кнопка удаления карточки"
-            type="button"
-            class="card__delete-botton"
-            ></button>
-            <img
-              class="card__foto"
-              src="./images/img/karelia.jpg"
-              alt="Карелия"
-            />
-            <div class="card__name-like">
-              <h2 class="card__title">Карелия</h2>
-              <button
-                aria-label="Лайк"
-                type="button"
-                class="card__button-like"
-              ></button>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card__rectangle">
-            <button
-            aria-label="кнопка удаления карточки"
-            type="button"
-            class="card__delete-botton"
-            ></button>
-            <img
-              class="card__foto"
-              src="./images/img/pereval-golubeva.jpg"
-              alt="Перевал Голубева"
-            />
-            <div class="card__name-like">
-              <h2 class="card__title">Перевал Голубева</h2>
-              <button
-                aria-label="Лайк"
-                type="button"
-                class="card__button-like"
-              ></button>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card__rectangle">
-            <button
-            aria-label="кнопка удаления карточки"
-            type="button"
-            class="card__delete-botton"
-            ></button>
-            <img
-              class="card__foto"
-              src="./images/img/smencevo.jpg"
-              alt="Сменцево"
-            />
-            <div class="card__name-like">
-              <h2 class="card__title">Сменцево</h2>
-              <button
-                aria-label="Лайк"
-                type="button"
-                class="card__button-like"
-              ></button>
-            </div>
-          </div>
-        </article>
       </section>
     </main>
 
@@ -193,7 +60,7 @@
       <p class="footer__copyright">&copy; Mesto Russia</p>
     </footer>
     
-    <div class="edit-form" id="editFormProfile">
+    <div class="edit-form effects__opacity" id="editFormProfile">
       <form
         autocomplete="on"
         action="#"
@@ -235,7 +102,7 @@
     </div>
 
 <!--форма для дбавления карточек-->
-    <div class="edit-form" id="editFormMesto">
+    <div class="edit-form effects__opacity" id="editFormMesto">
       <form
         autocomplete="on"
         action="#"
@@ -259,13 +126,13 @@
           class="edit-form__field"
         />
         <button
-          id="saveData"
+          id="saveDataButton"
           aria-label="Сохранить"
           value="Сохранить"
           type="submit"
           class="edit-form__submit-button"
         >
-          Сохранить
+        Сохранить
         </button>
         <button
           id='popapCloseCard'
@@ -277,7 +144,7 @@
     </div>
 <!--попап с фото-->
     <div 
-    class="image-popup" 
+    class="image-popup effects__opacity" 
     id="image-popup"
     >
       <button
@@ -286,13 +153,18 @@
         type="button"
         class="image-popup__close-icon"
       ></button>
-      <img class="image-popup__foto">
+      <img class="image-popup__foto" src="#" alt ="">
       <h4 class="image-popup__discription">13456789</h4>
     </div>
 
-    <!--<template>
+    <template id="newCardTemplate">
       <article class="card">
         <div class="card__rectangle">
+          <button
+          aria-label="кнопка удаления карточки"
+          type="button"
+          class="card__delete-button"
+          ></button>
           <img
             class="card__foto"
             src="#"
@@ -308,7 +180,7 @@
           </div>
         </div>
       </article>
-    </template>-->
+    </template>
 
     <script src="./pages/index.js"></script>
 
