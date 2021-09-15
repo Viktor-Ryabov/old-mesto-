@@ -9,9 +9,9 @@ const nameProfile = document.querySelector('#nameProfile');
 const descriptionProfile = document.querySelector('#descriptionProfile');
 
 //Попап профиля
-const editFormProfile = document.querySelector('#editFormProfile'); //форма
-const popupOpenProfileButton = document.querySelector('#popupOpenProfile');//кнокпа открыть
-const popupCloseProfileButton = document.querySelector('#popupCloseProfile');//кнопка зкарыть
+const editFormProfile = document.querySelector('#editFormProfile');
+const popupOpenProfileButton = document.querySelector('#popupOpenProfile');
+const popupCloseProfileButton = document.querySelector('#popupCloseProfile');
 
 //Попап добавления карточки
 const editFormMesto = document.querySelector('#editFormMesto');
@@ -30,8 +30,8 @@ const cardPlacesSection = document.querySelector('.places');
 const imagePopup = document.querySelector('#image-popup');
 const imagePopupOpenButton = document.querySelector('.card__foto');
 const imagePopupCloseButton = document.querySelector('#popapCloseFoto');
-const imagePopupFotoBig = document.querySelector('.image-popup__foto');
-const imagePopupFotoText = document.querySelector('.image-popup__discription');
+const imagePopupFotoBig = document.querySelector('.popup__foto');
+const imagePopupFotoText = document.querySelector('.popup__discription');
 
 const initialCards = [
     {
@@ -65,77 +65,80 @@ function addCard(name, link) {
     if ('content' in document.createElement('template')) {
         const newCardTemplate = document.querySelector('#newCardTemplate').content;
         let clone = newCardTemplate.cloneNode(true);
-        clone.querySelector('.card__title').innerHTML = name;
+        clone.querySelector('.card__title').textContent = name;
         clone.querySelector('img').src = link;
         clone.querySelector('img').alt = name;
-        like(clone.querySelector('.card__button-like'));
-        fotoOpen(clone.querySelector('.card__foto'));
-        
-        console.log(clone.querySelector('.card'), clone.querySelector('card__delete-button'));
-        deletCardFunction(clone.querySelector('.card'), clone.querySelector('.card__delete-button'));
-        //popupCloseFunction();
-
+        noticeLike(clone.querySelector('.card__button-like'));
+        addInfoFoto(clone.querySelector('.card__foto'));
+        openPopup(imagePopup, (clone.querySelector('.card__foto')));
+        deleteCard(clone.querySelector('.card'), clone.querySelector('.card__delete-button'));
         cardPlacesSection.insertBefore(clone, cardPlacesSection.firstChild);
     };
 }
+
 //ДОБАВЛЕНИЕ КАРТОЧЕК НА СТРАНИЦУ
-function cardsAddToPage(massive) {
+function addNewCardToPage(massive) {
     for(let i = 0; i < massive.length; i++) {
-        console.log(massive[i].name, massive[i].link);
         addCard(massive[i].name, massive[i].link);
     }
 }
-console.log(initialCards);
-cardsAddToPage(initialCards);
+addNewCardToPage(initialCards);
 
-//НОВЫЕ КАРТОЧКИ
-editFormMesto.addEventListener('submit', function(event){
-    event.preventDefault();
-    const newCardToBeAdded = [
-        {
-        name: mestoName.value,
-        link: linkFotoMesto.value
-        }
-    ];
-    console.log(newCardToBeAdded);
-    cardsAddToPage(newCardToBeAdded);
-    editFormMesto.classList.remove("effects__open-close");
-});
 
-//Открыть попап
-function popupOpenFunction(popupWindow, button) {
-    button.addEventListener('click', function(){
-        popupWindow.classList.add("effects__open-close");
-    });
-}
-popupOpenFunction(editFormProfile, popupOpenProfileButton);
-popupOpenFunction(editFormMesto, buttonAddCard);
+//СОЗДАНИЕ НОВЫХ КАРТОЧЕК
+let createNewCard = function(form, input1, input2) {
+    let newCardToBeAdded = [];
+    form.addEventListener('submit', function(event){
+        event.preventDefault();
+        newCardToBeAdded = [
+            {
+            name: input1.value,
+            link: input2.value
+            }
+        ];
+        console.log(newCardToBeAdded);
+        addNewCardToPage(newCardToBeAdded);
+        form.classList.remove("popup_opened");
+        newCardToBeAdded = [];
 
-//Закрыть попап
-function popupCloseFunction(popupWindow, button) {
-    button.addEventListener('click', function(){
-        // popupWindow.classList.add("effects__opacity_close");
-        popupWindow.classList.remove("effects__open-close");
-        // popupWindow.classList.remove("effects__opacity_close"); 
     }); 
 }
-popupCloseFunction(editFormProfile, popupCloseProfileButton);
-popupCloseFunction(editFormMesto, popapCloseCard);
-popupCloseFunction(imagePopup, imagePopupCloseButton);
+createNewCard(editFormMesto, mestoName, linkFotoMesto);
+
+//Открыть попап
+function openPopup(popupWindow, button) {
+    button.addEventListener('click', function(){
+        popupWindow.classList.add("popup_opened");
+    });
+}
+openPopup(editFormProfile, popupOpenProfileButton);
+openPopup(editFormMesto, buttonAddCard);
+
+
+//Закрыть попап
+function closePopup(popupWindow, button) {
+    button.addEventListener('click', function(){
+        // popupWindow.classList.add("effects__opacity_close");
+        popupWindow.classList.remove("popup_opened");
+        // popupWindow.classList.remove("effects__opacity_close"); 
+    });
+}
+closePopup(editFormProfile, popupCloseProfileButton);
+closePopup(editFormMesto, popapCloseCard);
+closePopup(imagePopup, imagePopupCloseButton);
 
 //Функция ЛАЙК
-function like(buttonLike) {
+function noticeLike(buttonLike) {
     buttonLike.addEventListener('click', function() {
         buttonLike.classList.toggle('card__button-like_active');
         });
 }
 
 //Функция "большие фото" открыть
-function fotoOpen(imageClick) {
+function addInfoFoto(imageClick) {
     imageClick.addEventListener('click', function () {
-        imagePopup.classList.add("effects__open-close");
         imagePopupFotoBig.src = imageClick.src;
-        imagePopupFotoText.innerHTML = imageClick.alt;
+        imagePopupFotoText.textContent = imageClick.alt;
     });
 }
 
@@ -143,106 +146,19 @@ function fotoOpen(imageClick) {
 function rename () {
     editFormProfile.addEventListener('submit', function(event){
         event.preventDefault();
-        nameProfile.innerHTML = nameEditForm.value;
-        descriptionProfile.innerHTML = descriptionEditForm.value;
-        editFormProfile.classList.remove("effects__open-close");
+        nameProfile.textContent = nameEditForm.value;
+        descriptionProfile.textContent = descriptionEditForm.value;
+        editFormProfile.classList.remove("popup_opened");
     });
 
 };
 rename();
 
 //УДАЛЕНИЕ КАРТОЧКИ
-function deletCardFunction(card, deletButton){
+function deleteCard(card, deletButton){
     deletButton.addEventListener('click', function(){
         card.remove();
     });
 }
-
-
-
-
-// //ЭЛЕМЕНТЫ
-
-// //кнопка лайк
-// 
-
-
-
-// //ПОПАП ДОБАВИТЬ КАРТОЧКУ
-
-
-
-
-// //Удаление карточки
-// const deleteCardButton = document.querySelectorAll(".card__delete-button");
-// const cardPlace = document.querySelectorAll('.card');
-
-
-
-
-
-
-
-
-
-
-
-// //     console.log(initialCards[2].name);
-// //     console.log(cardPlace);
-
-// // for(let i = 0; i < cardPlace.length; i++){
-// //     cardPlace[i].src = initialCards[i].link;
-// //     cardPlace[i].alt = initialCards[i].name;
-// //     cardPlace[i].outerText = initialCards[i].name;
-// // }
-
-    
-// //Добавление карточки
-// 
-
-// cloneTemplateCard = function() {
-//     if ('content' in document.createElement('template')) {
-//         const newCardTemplate = document.querySelector('#newCardTemplate').content;
-//         editFormMesto.addEventListener('submit', function(event){
-//             event.preventDefault();
-//             let clone = newCardTemplate.cloneNode(true);
-//             console.log(clone.querySelector('.card__title'));
-//             clone.querySelector('.card__title').innerHTML = mestoName.value;
-//             clone.querySelector('img').src = linkFotoMesto.value;
-//             clone.querySelector('img').alt = mestoName.value;
-//             cardPlacesSection.append(clone);
-//         });  
-//     }
-// }
-
-
-       
-// const deleteCardButtonNew = clone.querySelector('.card__delete-button');
-// deleteCardButton.push(deleteCardButtonNew);
-// console.log(deleteCardButton);
-
-// const buttonLikeNew = clone.querySelector('.card__button-like');
-// buttonLike.push(buttonLikeNew);
-
-// fotoOpen(imagePopupOpenButtonNew);
-
-
-
-// //слушатели событий
-
-
-
-// editFormMesto.style.visibility = 'hidden ';       
-
-
-
-
-
-
-
-
-
-
-// //КНОПКА ЛАЙК
 
 

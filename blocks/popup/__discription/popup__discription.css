@@ -1,8 +1,8 @@
-.image-popup__discription {
+.popup__discription {
     margin: 0 auto;
     padding: 0;
     left: 0;
-    width: 860px;
+    width: 800px;
     font-family: Inter;
     font-size: 12px;
     font-style: normal;
@@ -13,19 +13,19 @@
 }
 
 @media screen and (max-width: 918px) and (min-width: 770px) {
-    .image-popup__discription {
+    .popup__discription {
         width: 660px;
     }
 }
 
-@media screen and (max-width: 770px) and (min-width: 560px) {
-    .image-popup__discription {
+@media screen and (max-width: 770px) and (min-width: 620px) {
+    .popup__discription {
         width: 500px;
     }
 }
 
-@media screen and (max-width: 560px) and (min-width: 220px) {
-    .image-popup__discription {
+@media screen and (max-width: 620px) and (min-width: 220px) {
+    .popup__discription {
         width: 310px;
     }
 }
