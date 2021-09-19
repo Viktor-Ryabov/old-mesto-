@@ -14,3 +14,12 @@
         right: -30px;
     }
 }
+
+@media screen and (max-width: 400px){
+    .popup__close-icon_bigFoto{
+        width: 22px;
+        min-height: 22px;
+        top: -8px;
+        right: 0px;
+    }
+}

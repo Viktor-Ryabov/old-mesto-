@@ -11,20 +11,35 @@
     background-size: contain;
     /*margin-top: 195px;*/
 }
-@media screen and (max-width: 918px) and (min-width: 770px) {
+@media screen and (max-width: 1325px) {
     .popup__foto {
-        max-height: 660px;
+        max-width: 1000px;
+    }
+}
+@media screen and (max-width: 1115px) {
+    .popup__foto {
+        max-width: 800px;
     }
 }
 
-@media screen and (max-width: 770px) and (min-width: 620px) {
+
+@media screen and (max-width: 918px) and (min-width: 800px) {
+    .popup__foto {
+        max-height: 660px;
+        max-width: 700px;
+    }
+}
+
+@media screen and (max-width: 800px) and (min-width: 620px) {
     .popup__foto {
         max-height: 500px;
+        max-width: 500px;
     }
 }
 
 @media screen and (max-width: 620px) and (min-width: 220px) {
     .popup__foto {
         max-height: 310px;
+        max-width: 310px;
     }
 }

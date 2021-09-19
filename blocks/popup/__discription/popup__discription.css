@@ -12,13 +12,13 @@
     color: white;
 }
 
-@media screen and (max-width: 918px) and (min-width: 770px) {
+@media screen and (max-width: 918px) and (min-width: 800px) {
     .popup__discription {
         width: 660px;
     }
 }
 
-@media screen and (max-width: 770px) and (min-width: 620px) {
+@media screen and (max-width: 800px) and (min-width: 620px) {
     .popup__discription {
         width: 500px;
     }
