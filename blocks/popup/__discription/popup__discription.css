@@ -1,31 +1,32 @@
 .popup__discription {
-    margin: 0 auto;
-    padding: 0;
-    left: 0;
-    width: 800px;
-    font-family: Inter;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 15px;
-    letter-spacing: 0em;
-    color: white;
+  margin: 0 auto;
+  padding: 0;
+  left: 0;
+  width: 100%;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  color: white;
+  text-align: left;
 }
 
 @media screen and (max-width: 918px) and (min-width: 800px) {
-    .popup__discription {
-        width: 660px;
-    }
+  .popup__discription {
+    width: 660px;
+  }
 }
 
 @media screen and (max-width: 800px) and (min-width: 620px) {
-    .popup__discription {
-        width: 500px;
-    }
+  .popup__discription {
+    width: 500px;
+  }
 }
 
 @media screen and (max-width: 620px) and (min-width: 220px) {
-    .popup__discription {
-        width: 310px;
-    }
+  .popup__discription {
+    width: 310px;
+  }
 }

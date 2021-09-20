@@ -1,45 +1,44 @@
 .popup__foto {
-    margin: 0 auto 10px auto;
-    padding: 0;
-    max-height: 800px;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 25px rgba(190, 158, 158, 0.15);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 20;
-    background-size: contain;
-    /*margin-top: 195px;*/
+  margin: 0 auto 10px auto;
+  padding: 0;
+  max-height: 90%;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 25px rgba(190, 158, 158, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 20;
+  background-size: contain;
+  /*margin-top: 195px;*/
 }
 @media screen and (max-width: 1325px) {
-    .popup__foto {
-        max-width: 1000px;
-    }
+  .popup__foto {
+    max-width: 1000px;
+  }
 }
 @media screen and (max-width: 1115px) {
-    .popup__foto {
-        max-width: 800px;
-    }
+  .popup__foto {
+    max-width: 800px;
+  }
 }
 
-
 @media screen and (max-width: 918px) and (min-width: 800px) {
-    .popup__foto {
-        max-height: 660px;
-        max-width: 700px;
-    }
+  .popup__foto {
+    max-height: 660px;
+    max-width: 700px;
+  }
 }
 
 @media screen and (max-width: 800px) and (min-width: 620px) {
-    .popup__foto {
-        max-height: 500px;
-        max-width: 500px;
-    }
+  .popup__foto {
+    max-height: 500px;
+    max-width: 500px;
+  }
 }
 
 @media screen and (max-width: 620px) and (min-width: 220px) {
-    .popup__foto {
-        max-height: 310px;
-        max-width: 310px;
-    }
+  .popup__foto {
+    max-height: 310px;
+    max-width: 310px;
+  }
 }

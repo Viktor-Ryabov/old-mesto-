@@ -19,6 +19,7 @@ const buttonAddCard = document.querySelector("#buttonAddCard");
 const popapCloseCard = document.querySelector("#popapCloseCard");
 const mestoName = document.querySelector("#mestoName");
 const linkFotoMesto = document.querySelector("#linkFotoMesto");
+const formMesto = document.forms[1];
 
 //Лайк
 const cardButtonLike = document.querySelector(".card__button-like");
@@ -64,40 +65,35 @@ editFormMesto.addEventListener("submit", function (event) {
   const newCard = createCard(mestoName.value, linkFotoMesto.value);
   addNewCard(newCard);
   closePopup(editFormMesto);
+  formMesto.reset();
 });
 
 //Открыть попап
 function openPopup(popupWindow) {
   popupWindow.classList.add("popup_opened");
-  }
+}
 
-  //Закрыть попап
+//Закрыть попап
 function closePopup(popupWindow) {
   popupWindow.classList.remove("popup_opened");
 }
 
 //обрабочики событий
-function setPopupOpenEventListener(popupWindow, button){
-  button.addEventListener("click", function() {
+function setPopupOpenEventListener(popupWindow, button) {
+  button.addEventListener("click", function () {
     openPopup(popupWindow);
   });
 }
 setPopupOpenEventListener(editFormMesto, buttonAddCard);
 
-function setPopupCloseEventListener(popupWindow, button){
-  button.addEventListener("click", function() {
+function setPopupCloseEventListener(popupWindow, button) {
+  button.addEventListener("click", function () {
     closePopup(popupWindow);
   });
 }
 
 setPopupCloseEventListener(editFormProfile, popupCloseProfileButton);
 setPopupCloseEventListener(imagePopup, popupCloseFoto);
-
-function openPopupProfile(popupWindow){  
-  nameProfile.placeholder = nameEditForm.textContent;
-  descriptionProfile.textContent = descriptionEditForm.value;
-  openPopup(popupWindow);
-}
 
 //Функция ЛАЙК
 function setLikeHandler(buttonLike) {
@@ -132,20 +128,19 @@ function setDeleteCardHandler(card, deletButton) {
   });
 }
 
-function openProfilePopup(button, popupWindow) {
-  button.addEventListener('click', () => {
+function openPopupProfile(button, popupWindow) {
+  button.addEventListener("click", () => {
     nameEditForm.value = nameProfile.textContent;
     descriptionEditForm.value = descriptionProfile.textContent;
     openPopup(popupWindow);
-
   });
 }
-openProfilePopup(popupOpenProfileButton, editFormProfile);
+openPopupProfile(popupOpenProfileButton, editFormProfile);
 
 function renderMestoPopup(button, popupWindow) {
-  button.addEventListener('click', () => {
-    mestoName.value = "Введите название места";
-    linkFotoMesto.value = "Введите ссылку на фото места";
+  button.addEventListener("click", () => {
+    mestoName.value = "";
+    linkFotoMesto.value = "";
     closePopup(popupWindow);
   });
 }
