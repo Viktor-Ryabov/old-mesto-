@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
     <title>Проект Mesto</title>
   </head>
 
@@ -35,11 +35,13 @@
               alt="кнопка"
             />
           </button>
-          <p class="profile__subtitle" id="descriptionProfile">Неустанный путешественник</p>
+          <p class="profile__subtitle" id="descriptionProfile">
+            Неустанный путешественник
+          </p>
         </div>
 
         <button
-          id = "buttonAddCard"
+          id="buttonAddCard"
           aria-label="Добавление карточки"
           type="button"
           class="profile__add-button"
@@ -52,14 +54,16 @@
         </button>
       </section>
 
-      <section aria-label="Карточки путешествий с описанием" class="places">
-      </section>
+      <section
+        aria-label="Карточки путешествий с описанием"
+        class="places"
+      ></section>
     </main>
 
     <footer class="footer">
       <p class="footer__copyright">&copy; Mesto Russia</p>
     </footer>
-    
+
     <div class="popup" id="editFormProfile">
       <form
         autocomplete="on"
@@ -70,16 +74,16 @@
       >
         <h3 class="popup__title">Редактировать профиль</h3>
         <input
-          name='nameEditForm'
+          name="nameEditForm"
           id="nameEditForm"
-          placeholder = "Виктор Рябов"
+          placeholder="Виктор Рябов"
           type="text"
           class="popup__field"
         />
         <input
           id="descriptionEditForm"
-          name='descriptionEditForm'
-          placeholder = "Неустанный путешественник"
+          name="descriptionEditForm"
+          placeholder="Неустанный путешественник"
           value=""
           type="text"
           class="popup__field"
@@ -94,7 +98,7 @@
           Сохранить
         </button>
         <button
-          id='popupCloseProfile'
+          id="popupCloseProfile"
           aria-label="Закрыть"
           type="button"
           class="popup__close-icon"
@@ -102,7 +106,7 @@
       </form>
     </div>
 
-<!--форма для дбавления карточек-->
+    <!--форма для дбавления карточек-->
     <div class="popup" id="editFormMesto">
       <form
         autocomplete="on"
@@ -114,16 +118,16 @@
         <h3 class="popup__title">Новое место</h3>
         <input
           placeholder="Введите название места"
-          name='mestoName'
+          name="mestoName"
           id="mestoName"
           value=""
           type="text"
           class="popup__field"
         />
         <input
-          placeholder="Введите ссылку на фото места"  
+          placeholder="Введите ссылку на фото места"
           id="linkFotoMesto"
-          name='linkMesto'
+          name="linkMesto"
           value=""
           type="text"
           class="popup__field"
@@ -136,10 +140,10 @@
           class="popup__submit-button"
           onclick="this.form.reset();"
         >
-        Сохранить
+          Сохранить
         </button>
         <button
-          id='popapCloseCard'
+          id="popapCloseCard"
           aria-label="Закрыть"
           type="button"
           class="popup__close-icon"
@@ -147,16 +151,16 @@
         ></button>
       </form>
     </div>
-<!--попап с фото-->
+    <!--попап с фото-->
     <div class="popup" id="image-popup">
-      <div class='popup__foto-content'>
+      <div class="popup__foto-content">
         <button
-          id='popapCloseFoto'
+          id="popapCloseFoto"
           aria-label="Закрыть"
           type="button"
           class="popup__close-icon popup__close-icon_bigFoto"
         ></button>
-        <img class="popup__foto" src="#" alt ="" id="imagePopupOpenButton">
+        <img class="popup__foto" src="#" alt="" id="imagePopupOpenButton" />
         <h4 class="popup__discription">text</h4>
       </div>
     </div>
@@ -165,15 +169,11 @@
       <article class="card">
         <div class="card__rectangle">
           <button
-          aria-label="кнопка удаления карточки"
-          type="button"
-          class="card__delete-button"
+            aria-label="кнопка удаления карточки"
+            type="button"
+            class="card__delete-button"
           ></button>
-          <img
-            class="card__foto"
-            src="#"
-            alt=""
-          />
+          <img class="card__foto" src="#" alt="" />
           <div class="card__name-like">
             <h2 class="card__title"></h2>
             <button
@@ -186,10 +186,6 @@
       </article>
     </template>
 
-    <script src="./blocks/card/__initial-сards/cards__initial-сards.js"></script>
-    <script src="./pages/index.js"></script>
-
+    <script type="module" src="./pages/index.js"></script>
   </body>
 </html>
-
-
