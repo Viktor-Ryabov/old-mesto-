@@ -60,35 +60,36 @@
       <p class="footer__copyright">&copy; Mesto Russia</p>
     </footer>
     
-    <div class="edit-form effects__opacity" id="editFormProfile">
+    <div class="popup" id="editFormProfile">
       <form
         autocomplete="on"
         action="#"
-        class="edit-form__form"
+        class="popup__form"
         name="editForm"
         method="POST"
       >
-        <h3 class="edit-form__title">Редактировать профиль</h3>
+        <h3 class="popup__title">Редактировать профиль</h3>
         <input
           name='nameEditForm'
           id="nameEditForm"
-          value="Рябов Виктор"
+          placeholder = "Виктор Рябов"
           type="text"
-          class="edit-form__field"
+          class="popup__field"
         />
         <input
           id="descriptionEditForm"
           name='descriptionEditForm'
-          value="Неустанный путешественник"
+          placeholder = "Неустанный путешественник"
+          value=""
           type="text"
-          class="edit-form__field"
+          class="popup__field"
         />
         <button
           id="saveData"
           aria-label="Сохранить"
           value="Сохранить"
           type="submit"
-          class="edit-form__submit-button"
+          class="popup__submit-button"
         >
           Сохранить
         </button>
@@ -96,41 +97,44 @@
           id='popupCloseProfile'
           aria-label="Закрыть"
           type="button"
-          class="edit-form__close-icon"
+          class="popup__close-icon"
         ></button>
       </form>
     </div>
 
 <!--форма для дбавления карточек-->
-    <div class="edit-form effects__opacity" id="editFormMesto">
+    <div class="popup" id="editFormMesto">
       <form
         autocomplete="on"
         action="#"
-        class="edit-form__form"
+        class="popup__form"
         name="editForm"
         method="POST"
       >
-        <h3 class="edit-form__title">Новое место</h3>
+        <h3 class="popup__title">Новое место</h3>
         <input
+          placeholder="Введите название места"
           name='mestoName'
           id="mestoName"
-          value="Самое невероятное место, которое только бывает"
+          value=""
           type="text"
-          class="edit-form__field"
+          class="popup__field"
         />
         <input
+          placeholder="Введите ссылку на фото места"  
           id="linkFotoMesto"
-          name='linkFotoMesto'
-          value="https://mesto/example.jpg"
+          name='linkMesto'
+          value=""
           type="text"
-          class="edit-form__field"
+          class="popup__field"
         />
         <button
           id="saveDataButton"
           aria-label="Сохранить"
           value="Сохранить"
           type="submit"
-          class="edit-form__submit-button"
+          class="popup__submit-button"
+          onclick="this.form.reset();"
         >
         Сохранить
         </button>
@@ -138,23 +142,23 @@
           id='popapCloseCard'
           aria-label="Закрыть"
           type="button"
-          class="edit-form__close-icon"
+          class="popup__close-icon"
+          onclick="this.form.reset();"
         ></button>
       </form>
     </div>
 <!--попап с фото-->
-    <div 
-    class="image-popup effects__opacity" 
-    id="image-popup"
-    >
-      <button
-        id='popapCloseFoto'
-        aria-label="Закрыть"
-        type="button"
-        class="image-popup__close-icon"
-      ></button>
-      <img class="image-popup__foto" src="#" alt ="">
-      <h4 class="image-popup__discription">13456789</h4>
+    <div class="popup" id="image-popup">
+      <div class='popup__foto-content'>
+        <button
+          id='popapCloseFoto'
+          aria-label="Закрыть"
+          type="button"
+          class="popup__close-icon popup__close-icon_bigFoto"
+        ></button>
+        <img class="popup__foto" src="#" alt ="" id="imagePopupOpenButton">
+        <h4 class="popup__discription">text</h4>
+      </div>
     </div>
 
     <template id="newCardTemplate">
@@ -182,6 +186,7 @@
       </article>
     </template>
 
+    <script src="./blocks/card/__initial-сards/cards__initial-сards.js"></script>
     <script src="./pages/index.js"></script>
 
   </body>

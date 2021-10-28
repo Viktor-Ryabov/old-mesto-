@@ -4,15 +4,8 @@
     width: 282px;
     height: 282px;
     top: 0;
+    display: block;
 }
 .card__foto:hover{
     cursor: pointer;
-}
-
-
-
-/*.elements__foto:hover~.elements__element{
-    transform: scale(130%);
-    filter: contrast(130%) brightness(105%);
-    transition: 3s;
 }
