@@ -79,3 +79,4 @@ editFormMesto.addEventListener("submit", function (event) {
   editFormMesto.classList.remove("effects__open-close");
 });
 
+//
