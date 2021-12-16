@@ -6,7 +6,6 @@ const mestoAPIConfig = {
     },
 };
 
-
 const requestResult = (res) => {
     if (res.ok) {
         return res.json();
@@ -17,50 +16,37 @@ const requestResult = (res) => {
     }
 };
 
-let idUser;
 const getUserInfo = () => {
     return fetch(`${mestoAPIConfig.baseUrl}/users/me`, {
         headers: mestoAPIConfig.headers,
-    })
-    .then((res) => requestResult(res))
-    .then(data => {
-        idUser = data._id;
-        return idUser
-    })
-}
-getUserInfo();
-
-const getProfileName = () => {
-    return fetch(`${mestoAPIConfig.baseUrl}/users/me`, {
-        headers: mestoAPIConfig.headers,
-    }).then( res => requestResult(res))
+    }).then((res) => requestResult(res));
 };
 
-const getCardsAPI = () => {
+const getCardsInfo = () => {
     return fetch(`${mestoAPIConfig.baseUrl}/cards`, {
         headers: mestoAPIConfig.headers,
-    }).then( res => requestResult(res))
+    }).then((res) => requestResult(res));
 };
 
 const deleteCardsAPI = (card_id) => {
     return fetch(`${mestoAPIConfig.baseUrl}/cards/${card_id}`, {
         method: "DELETE",
         headers: mestoAPIConfig.headers,
-    }).then( res => requestResult(res));
+    }).then((res) => requestResult(res));
 };
 
 const putLikesAPI = (card_id) => {
     return fetch(`${mestoAPIConfig.baseUrl}/cards/likes/${card_id}`, {
         method: "PUT",
         headers: mestoAPIConfig.headers,
-    }).then( res => requestResult(res));
+    }).then((res) => requestResult(res));
 };
 
 const deleteLikesAPI = (card_id) => {
     return fetch(`${mestoAPIConfig.baseUrl}/cards/likes/${card_id}`, {
         method: "DELETE",
         headers: mestoAPIConfig.headers,
-    }).then( res => requestResult(res));
+    }).then((res) => requestResult(res));
 };
 
 const addNewCadrsAPI = (mestoName, linkFotoMesto) => {
@@ -71,7 +57,7 @@ const addNewCadrsAPI = (mestoName, linkFotoMesto) => {
             name: `${mestoName}`,
             link: `${linkFotoMesto}`,
         }),
-    }).then( res => requestResult(res))
+    }).then((res) => requestResult(res));
 };
 
 const changeAvatarAPI = (avatarLink) => {
@@ -81,7 +67,7 @@ const changeAvatarAPI = (avatarLink) => {
         body: JSON.stringify({
             avatar: `${avatarLink}`,
         }),
-    }).then( res => requestResult(res));
+    }).then((res) => requestResult(res));
 };
 
 function sendProfileDataToServer(description, Avtor) {
@@ -91,27 +77,25 @@ function sendProfileDataToServer(description, Avtor) {
         body: JSON.stringify({
             about: `${description}`,
             name: `${Avtor}`,
-            _id: "873635d1fbd008b99ae7cf14",
         }),
-    }).then( res => requestResult(res));
+    }).then((res) => requestResult(res));
 }
 
 const checkLikesAPI = (data) => {
     return fetch(`${mestoAPIConfig.baseUrl}/cards/${data}`, {
         headers: mestoAPIConfig.headers,
-    }).then( res => requestResult(res));
+    }).then((res) => requestResult(res));
 };
 
 export {
-    getCardsAPI,
+    getCardsInfo,
     deleteCardsAPI,
     putLikesAPI,
     deleteLikesAPI,
     changeAvatarAPI,
     addNewCadrsAPI,
     sendProfileDataToServer,
-    getProfileName,
     checkLikesAPI,
     getUserInfo,
-    idUser
+    requestResult,
 };
